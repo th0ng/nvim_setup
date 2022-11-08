@@ -8,3 +8,6 @@ require("th0ng.plugins.lualine")
 require("th0ng.plugins.telescope")
 require("th0ng.plugins.nvim-cmp")
 require("th0ng.plugins.lsp.mason")
+require("th0ng.plugins.lsp.lspsaga")
+require("th0ng.plugins.lsp.lspconfig")
+
