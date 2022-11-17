@@ -32,6 +32,7 @@ return packer.startup(function(use)
   -- lua functions that many plugins use
   use "nvim-lua/plenary.nvim"
 
+  use "folke/tokyonight.nvim" --tokyonight
   use "sainnhe/sonokai" -- preferred colorscheme
 
   -- tmux & split window navigation
@@ -78,6 +79,24 @@ return packer.startup(function(use)
   use { "glepnir/lspsaga.nvim", branch = "main" }
   use "jose-elias-alvarez/typescript.nvim"
   use "onsails/lspkind.nvim"
+
+  -- formatting & linting
+  use "jose-elias-alvarez/null-ls.nvim"
+  use "jayp0521/mason-null-ls.nvim"
+
+  -- treesitter configuration
+  --
+  use({
+    "nvim-treesitter/nvim-treesitter",
+    run = function ()
+      local ts_update = require("nvim-treesitter.install").update({ witd_sync = true })
+      ts_update()
+    end,
+  })
+
+  -- auto closing
+  use "windwp/nvim-autopairs"
+  use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" })
 
   if packer_bootstrap then 
     require("packer").sync()

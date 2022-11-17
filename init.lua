@@ -10,4 +10,6 @@ require("th0ng.plugins.nvim-cmp")
 require("th0ng.plugins.lsp.mason")
 require("th0ng.plugins.lsp.lspsaga")
 require("th0ng.plugins.lsp.lspconfig")
-
+require("th0ng.plugins.lsp.null-ls")
+require("th0ng.plugins.autopairs")
+require("th0ng.plugins.treesitter")
